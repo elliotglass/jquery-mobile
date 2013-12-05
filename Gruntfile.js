@@ -764,7 +764,11 @@ module.exports = function( grunt ) {
 
 	grunt.registerTask( "demos", [ "concat:demos", "copy:demos.nested-includes", "copy:demos.processed", "copy:demos.unprocessed", "copy:demos.backbone" ] );
 
-	grunt.registerTask( "cdn", [ "release:init", "clean:jqueryCDN", "config:copy:jqueryCDN", "copy:jqueryCDN", "clean:tmp", "config:copy:googleCDN", "copy:googleCDN", "hash-manifest:googleCDN", "compress:googleCDN", "clean:tmp" ] );
+	grunt.registerTask( "cdn", [
+		"release:init",
+		"clean:jqueryCDN", "config:copy:jqueryCDN", "copy:jqueryCDN",
+		"clean:tmp", "config:copy:googleCDN", "copy:googleCDN", "hash-manifest:googleCDN", "compress:googleCDN", "clean:tmp"
+	]);
 
 	grunt.registerTask( "dist", [ "config:fetchHeadHash", "js:release", "css:release", "copy:images", "demos", "compress:dist"  ] );
 	grunt.registerTask( "dist:release", [ "release:init", "dist", "cdn" ] );
