@@ -4,6 +4,13 @@ module.exports = function( Release ) {
 		issueTracker: "github",
 		changelogShell: function() {
 			return "# Changelog for jQuery Mobile v" + Release.newVersion + "\n";
+		},
+
+		generateArtifacts: function( done ) {
+			Release.exec(
+				"grunt dist:release"
+			);
+			done([]);
 		}
 	});
 
