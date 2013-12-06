@@ -11,6 +11,10 @@ module.exports = function( Release ) {
 				"grunt dist:release"
 			);
 			done([]);
+		},
+
+		publishArtifacts: function() {
+			// TODO
 		}
 	});
 
